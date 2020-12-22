@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Add new Task</h2>
+<mat-dialog-content class="mat-typography" [formGroup]="taskForm">
+	<div fxLayout="row" fxLayoutAlign="space-between">
+		<div fxFlex="45%">
+			<mat-form-field class="example-full-width" appearance="outline">
+				<mat-label>Task Title</mat-label>
+				<input matInput formControlName="taskTitle">
+				<mat-error *ngIf="taskTitle && taskTitle.errors">Task title is required</mat-error>
+			</mat-form-field>
+			<mat-form-field class="example-full-width" appearance="outline">
+				<mat-label>Description</mat-label>
+				<input matInput formControlName="description">
+        </mat-form-field>
+				<mat-form-field class="example-full-width" appearance="outline">
+					<mat-label>Select Priority</mat-label>
+					<mat-select formControlName="priority">
+						<mat-option value="low">Low</mat-option>
+						<mat-option value="medium">Medium</mat-option>
+						<mat-option value="high">High</mat-option>
+					</mat-select>
+				</mat-form-field>
+		</div>
+		<div fxFlex="45%">
+			<mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)" formControlName="date">
+			</mat-calendar>
+		</div>
+	</div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<button mat-raised-button mat-dialog-close>Cancel</button>
+	<button mat-raised-button [mat-dialog-close]="taskForm.value" cdkFocusInitial color="primary" [disabled]="taskForm.invalid">Save</button>
+</mat-dialog-actions>

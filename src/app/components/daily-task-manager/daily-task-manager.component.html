@@ -1,0 +1,73 @@
+<mat-toolbar color="primary">
+	<div fxLayout="row" fxFlex="100%" fxLayoutAlign="space-between">
+		<div>Daily Task Manager</div>
+		<button mat-raised-button (click)="openDialog()">Add new Task </button>
+	</div>
+</mat-toolbar>
+<div fxLayout="row" fxLayoutAlign="space-between" class="upgrades-status-container">
+	<div fxFlex="30%">
+		<mat-card class="upgrade-queued-card">
+			<mat-card-header>
+				<mat-card-title>Queued</mat-card-title>
+			</mat-card-header>
+			<mat-card-content>
+				<mat-list>
+					<mat-list-item>
+						<div fxLayout="row" class="list-item">
+							<div fxFlex="90%" class="asset-label">
+
+							</div>
+							<div fxFlex="10%">
+								<i class="material-icons">visibility</i>
+							</div>
+						</div>
+					</mat-list-item>
+				</mat-list>
+			</mat-card-content>
+		</mat-card>
+	</div>
+	<div fxFlex="30%">
+		<mat-card class="upgrade-mat-card">
+			<mat-card-header>
+				<mat-card-title>Processing</mat-card-title>
+			</mat-card-header>
+			<mat-card-content>
+				<div fxLayout="column" class="content">
+					<div fxFlex="20%">
+						<div fxLayout="row" class="list-item" fxLayoutAlign="center">
+							<div fxFlex="90%" class="asset-label">{{'helo'}}</div>
+							<div fxFlex="10%">
+								<i class="far fa-stop-circle" aria-hidden="true"></i>
+							</div>
+						</div>
+					</div>
+					<div fxFlex="65%">
+					</div>
+					<div fxFlex="15%">
+						<div fxLayout="column" fxLayoutAlign="space-between" class="content time-wrapper">
+						</div>
+					</div>
+				</div>
+			</mat-card-content>
+		</mat-card>
+	</div>
+	<div fxFlex="30%">
+		<mat-card class="complete-card">
+			<mat-card-header>
+				<mat-card-title>Completed</mat-card-title>
+			</mat-card-header>
+			<mat-card-content>
+				<mat-list>
+					<mat-list-item>
+						<div fxFlex="90%">
+							<div fxLayout="column">
+								<div fxFlex="50%" class="asset-label">{{'test'}}</div>
+								<div fxFlex="20%" class="time">{{'test'}}</div>
+							</div>
+						</div>
+					</mat-list-item>
+				</mat-list>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>
